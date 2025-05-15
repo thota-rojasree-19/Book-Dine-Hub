@@ -1,0 +1,142 @@
+/* Login.css */
+
+body {
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  }
+  
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+  
+  .login-card {
+    background: #fff;
+    padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.7s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  
+  .login-card h1 {
+    margin-bottom: 1.8rem;
+    color: #2d3748;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .input-group {
+    width: 100%;
+    margin-bottom: 1.3rem;
+  }
+  
+  .input-group label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  
+  .input-group .icon {
+    margin-right: 8px;
+    color: #fda085;
+    font-size: 1.1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 7px;
+    font-size: 1rem;
+    background: #f7fafc;
+    transition: border 0.2s;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border: 1.5px solid #fda085;
+    background: #fffbe9;
+  }
+  
+  .login-btn, .register-btn {
+    width: 100%;
+    padding: 0.8rem 0;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  }
+  
+  .login-btn {
+    background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(253,160,133,0.10);
+    margin-bottom: 0.7rem;
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+    color: #fff;
+  }
+  
+  .register-btn {
+    background: #fff;
+    color: #fda085;
+    border: 1.5px solid #fda085;
+  }
+  
+  .register-btn:hover {
+    background: #fda085;
+    color: #fff;
+  }
+  
+  .error-text {
+    color: #e53e3e;
+    background: #fff5f5;
+    border: 1px solid #fed7d7;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .login-card p {
+    margin: 0.7rem 0 0.2rem 0;
+    color: #4a5568;
+    font-size: 1rem;
+  }
+  
+ 
+  @media (max-width: 480px) {
+    .login-card {
+      width: 94vw;
+      padding: 1.2rem 0.8rem 1.5rem 0.8rem;
+    }
+    .login-card h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

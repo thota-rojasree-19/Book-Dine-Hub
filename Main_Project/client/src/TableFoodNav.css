@@ -1,0 +1,109 @@
+.table-food-nav-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.page-background {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(60, 72, 100, 0.15);
+    padding: 2.5rem 2rem;
+}
+
+.content-container {
+    text-align: center;
+}
+
+.content-container > p:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.content-container > p:nth-child(2) {
+    font-size: 1.15rem;
+    color: #6366f1;
+    margin-bottom: 2.5rem;
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.section {
+    background: #f1f5f9;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    padding: 1.5rem 1.2rem;
+    width: 220px;
+    cursor: pointer;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.18);
+    background: #e0e7ff;
+}
+
+.section img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #6366f1;
+    background: #fff;
+}
+
+.section h3 {
+    margin: 0.5rem 0 0.3rem 0;
+    font-size: 1.3rem;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.section p {
+    color: #64748b;
+    font-size: 1rem;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .container3 {
+        gap: 1.2rem;
+    }
+    .section {
+        width: 180px;
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-background {
+        padding: 1.2rem 0.5rem;
+    }
+    .container3 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section {
+        width: 90vw;
+        max-width: 350px;
+        margin-bottom: 1.2rem;
+    }
+}

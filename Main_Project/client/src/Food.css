@@ -1,0 +1,216 @@
+ /* Food.css */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fb;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .food-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px 48px 16px;
+    background: #f8f9fb;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6347;
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: 18px;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 24px rgba(255,99,71,0.13);
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  
+  .cart-btn {
+    background: #fff;
+    color: #ff6347;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,99,71,0.12);
+    transition: background 0.2s, color 0.2s;
+  }
+  .cart-btn:hover {
+    background: #ff6347;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 32px;
+    margin-top: 16px;
+  }
+  
+  .food-item {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 16px 20px 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+  
+  .food-item:hover {
+    box-shadow: 0 8px 32px rgba(255,99,71,0.18);
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  .food-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    border: 2px solid #ff6347;
+    background: #fff;
+  }
+  
+  .food-item h3 {
+    font-size: 1.15rem;
+    color: #232946;
+    margin-bottom: 7px;
+    margin-top: 0;
+    font-weight: 600;
+  }
+  
+  .food-item p {
+    font-size: 1.07rem;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    border: none;
+    border-radius: 18px;
+    padding: 10px 22px;
+    margin: 5px 0;
+    background: #ff6347;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,99,71,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn:hover, .add-to-cart-btn:hover, .make-order-btn:hover {
+    background: #232946;
+    color: #fff;
+  }
+  
+  .add-to-cart-btn {
+    margin-bottom: 8px;
+    background: #ff6347;
+  }
+  
+  .make-order-btn {
+    background: #232946;
+  }
+  
+  .make-order-btn:hover {
+    background: #ff6347;
+    color: #fff;
+  }
+  
+  /* Dialog overlay and box */
+  .dialog-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44,62,80,0.18);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dialog-box {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(44,62,80,0.18);
+    padding: 32px 32px 24px 32px;
+    min-width: 320px;
+    max-width: 95vw;
+    text-align: left;
+    animation: popIn 0.2s;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .dialog-box h3 {
+    margin-top: 0;
+    color: #ff6347;
+    margin-bottom: 18px;
+    font-size: 1.35rem;
+  }
+  
+  .dialog-box p, .dialog-box label {
+    font-size: 1.08rem;
+    color: #232946;
+    margin: 8px 0;
+  }
+  
+  .dialog-box input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .dialog-box .btn {
+    margin-top: 16px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 700px) {
+    .food-container {
+      padding: 12px 2vw 32px 2vw;
+    }
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 18px 10px;
+    }
+    .food-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .dialog-box {
+      min-width: 90vw;
+      padding: 18px 6vw 18px 6vw;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .header h1 {
+      font-size: 1.1rem;
+    }
+    .dialog-box {
+      min-width: 98vw;
+      padding: 10px 2vw 10px 2vw;
+    }
+  }
+  

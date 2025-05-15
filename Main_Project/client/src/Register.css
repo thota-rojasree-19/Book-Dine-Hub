@@ -1,0 +1,178 @@
+/* Register.css */
+
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #e3ffe6 0%, #f9f9f9 100%);
+    padding: 2rem;
+  }
+  
+
+  .register-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(26, 138, 99, 0.10);
+    padding: 2.5rem 2rem 2rem 2rem;
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .register-card h1 {
+    color: #1a8a63;
+    margin-bottom: 1.2rem;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .input-group {
+    margin-bottom: 1.3rem;
+    width: 100%;
+  }
+  
+  .input-group label {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a8a63;
+    font-size: 1.05rem;
+  }
+  
+  .input-group .icon {
+    margin-right: 0.5rem;
+    color: #1a8a63;
+    font-size: 1.1rem;
+  }
+  
+  /* Password input with toggle icon */
+  .password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-input input {
+    width: 100%;
+    padding: 0.7rem 2.5rem 0.7rem 0.7rem;
+    border: 1.5px solid #d4e5de;
+    border-radius: 8px;
+    background: #f7faf9;
+    font-size: 1.05rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .password-input input:focus {
+    border-color: #1a8a63;
+    background: #f2fff7;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 2.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.2s;
+  }
+  
+  .password-toggle:hover {
+    color: #1a8a63;
+  }
+  
+  .static-icon {
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b4b4b4;
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+  
+ 
+  .input-group input[type="text"],
+  .input-group input[type="email"],
+  .input-group input[type="password"] {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1.5px solid #d4e5de;
+    border-radius: 8px;
+    background: #f7faf9;
+    font-size: 1.05rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .input-group input:focus {
+    border-color: #1a8a63;
+    background: #f2fff7;
+  }
+  
+ 
+  .error-text {
+    color: #d32f2f;
+    font-size: 0.97rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    letter-spacing: 0.1px;
+  }
+  
+  .success-text {
+    color: #1a8a63;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+
+  .register-btn {
+    width: 100%;
+    background: #1a8a63;
+    color: #fff;
+    padding: 0.85rem 0;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(26, 138, 99, 0.08);
+  }
+  
+  .register-btn:hover,
+  .register-btn:focus {
+    background: #176a4e;
+    outline: none;
+  }
+  
+
+  @media (max-width: 600px) {
+    .register-card {
+      padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+      max-width: 98vw;
+    }
+    .register-container {
+      padding: 0.5rem;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #f7faf9 inset !important;
+    -webkit-text-fill-color: #222 !important;
+  }
+  

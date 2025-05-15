@@ -1,0 +1,318 @@
+/* Cart.css */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f8fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cart-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px 48px 16px;
+    background: #f7f8fa;
+    min-height: 100vh;
+  }
+  
+  .cart-container h1 {
+    font-size: 2.1rem;
+    color: #232946;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  .back-btn {
+    background: #232946;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    margin-left: 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .back-btn:hover {
+    background: #eebbc3;
+    color: #232946;
+  }
+  
+  .cart-content {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .cart-details {
+    flex: 2;
+    min-width: 320px;
+    max-width: 500px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 14px rgba(44,62,80,0.10);
+    margin-bottom: 18px;
+    padding: 18px 14px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .cart-item:hover {
+    box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+    transform: translateY(-3px) scale(1.01);
+  }
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-right: 18px;
+    border: 2px solid #eebbc3;
+    background: #fff;
+  }
+  .cart-item h3 {
+    margin: 0 0 8px 0;
+    color: #232946;
+    font-size: 1.1rem;
+  }
+  .cart-item p {
+    margin: 0 0 10px 0;
+    color: #444;
+    font-size: 1rem;
+  }
+  .cart-item input[type="number"] {
+    width: 60px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  .remove-btn {
+    background: #ff595e;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 7px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s;
+  }
+  .remove-btn:hover {
+    background: #d90429;
+  }
+  
+  .cart-summary {
+    flex: 1;
+    min-width: 260px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 14px rgba(44,62,80,0.10);
+    padding: 28px 22px 22px 22px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 18px;
+  }
+  .cart-summary h2 {
+    margin-top: 0;
+    color: #232946;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+  .cart-summary h3 {
+    font-size: 1.1rem;
+    color: #232946;
+    margin: 18px 0 8px 0;
+  }
+  .cart-summary p {
+    font-size: 1.01rem;
+    color: #444;
+    margin: 5px 0;
+  }
+  .cart-summary ul {
+    margin: 0 0 12px 18px;
+    padding: 0;
+    font-size: 0.98rem;
+  }
+  .cart-summary li {
+    margin-bottom: 4px;
+  }
+  .checkout-btn {
+    background: #232946;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 12px 28px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background 0.2s, color 0.2s;
+    width: 100%;
+  }
+  .checkout-btn:hover {
+    background: #eebbc3;
+    color: #232946;
+  }
+  
+  /* Modal styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44,62,80,0.18);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-box {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(44,62,80,0.18);
+    padding: 32px 32px 24px 32px;
+    min-width: 320px;
+    max-width: 95vw;
+    text-align: center;
+    animation: popIn 0.2s;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .modal-box h2 {
+    margin-top: 0;
+    color: #232946;
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+  }
+  .modal-buttons {
+    margin-top: 18px;
+  }
+  .modal-buttons button {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .modal-buttons button:first-child {
+    background: #4caf50;
+  }
+  .modal-buttons button:last-child {
+    background: #ff595e;
+  }
+  .modal-buttons button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Success popup */
+  .popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44,62,80,0.16);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-content {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(44,62,80,0.18);
+    padding: 40px 32px 32px 32px;
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    animation: popIn 0.2s;
+  }
+  .popup-content h2 {
+    color: #4caf50;
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+  }
+  .popup-content p {
+    color: #232946;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+  
+  /* Empty cart message */
+  .cart-container p {
+    text-align: center;
+    color: #888;
+    font-size: 1.16rem;
+    margin-top: 48px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .cart-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .cart-details, .cart-summary {
+      max-width: 100%;
+      min-width: 0;
+      margin: 0 0 18px 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .cart-container {
+      padding: 8px 1vw 20px 1vw;
+    }
+    .modal-box, .popup-content {
+      min-width: 98vw;
+      padding: 10px 2vw 10px 2vw;
+    }
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+
+
+  .datepicker-wrapper {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .datepicker-input {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+  
+  .custom-calendar {
+    border-radius: 15px;
+    padding: 10px;
+    background: #fdfdfd;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  
