@@ -16,7 +16,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ Database connected"))
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch((err) => console.error("❌ Database connection error:", err));
 const User = require("./models/User");
 const Booking = require("./models/Booking");
