@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Tables.css";
+import API from "./api";
 
 const Tables = () => {
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ const Tables = () => {
         if (userEmail) {
             const fetchUserName = async () => {
                 try {
-                    const res = await fetch(`http://localhost:5000/api/get-user?email=${userEmail}`);
+                    const res = await fetch(`/get-user?email=${userEmail}`);
                     const data = await res.json();
                     if (data.name) setCustomerName(data.name);
                 } catch (error) {
@@ -65,7 +66,7 @@ const Tables = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/check-table-availability", {
+            const response = await fetch("/check-table-availability", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -108,7 +109,7 @@ const Tables = () => {
 
     const payNow = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/book-table", {
+            const response = await fetch("/book-table", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(bookingDetails),
@@ -116,7 +117,7 @@ const Tables = () => {
 
             if (!response.ok) throw new Error("Failed to save booking");
 
-            await fetch("http://localhost:5000/api/send-booking-email", {
+            await fetch("/send-booking-email", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: bookingDetails.email, bookingDetails }),
@@ -135,7 +136,7 @@ const Tables = () => {
     const cancelBooking = async () => {
         if (isBooked) {
             try {
-                const response = await fetch(`http://localhost:5000/api/cancel-booking/${bookingDetails._id}`, {
+                const response = await fetch(`/cancel-booking/${bookingDetails._id}`, {
                     method: "DELETE",
                 });
 

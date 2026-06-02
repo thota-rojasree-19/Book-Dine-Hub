@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './BookedTables.css';
+import API from "./api";
 
 const BookedTables = () => {
     const [bookings, setBookings] = useState([]);
@@ -16,7 +17,7 @@ const BookedTables = () => {
 
             try {
                 console.log("Fetching bookings for:", userEmail);
-                const response = await axios.get(`http://localhost:5000/api/booked-tables?email=${userEmail}`);
+                const response = await API.get(`/booked-tables?email=${userEmail}`);
                 setBookings(response.data);
             } catch (error) {
                 console.error("Error fetching bookings:", error);
@@ -29,7 +30,7 @@ const BookedTables = () => {
 
     const handleCancelBooking = async (bookingId) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/cancel-booking/${bookingId}`);
+            const response = await API.delete(`/cancel-booking/${bookingId}`);
             
             if (response.data.success) {
                 setBookings(bookings.filter((booking) => booking._id !== bookingId));

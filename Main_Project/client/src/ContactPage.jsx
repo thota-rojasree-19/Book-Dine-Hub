@@ -1,5 +1,6 @@
 import React from "react";
 import "./ContactPage.css";
+import API from "./api";
 
 const ContactPage = () => {
     return (

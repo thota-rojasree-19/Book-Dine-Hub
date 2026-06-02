@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Rooms.css';
 import axios from 'axios';
+import API from "./api";
 
 const roomsData = [
   { name: 'Deluxe Room', price: 1500, ac: true, image: 'room1.jpeg' },
@@ -37,7 +38,7 @@ const Rooms = () => {
       const storedEmail = localStorage.getItem("userEmail");
       if (storedEmail) {
         try {
-          const res = await axios.get(`http://localhost:5000/api/get-user-details?email=${storedEmail}`);
+          const res = await API.get(`/get-user-details?email=${storedEmail}`);
           setCustomerName(res.data.name);
           setCustomerEmail(res.data.email);
         } catch (error) {
@@ -63,7 +64,7 @@ const Rooms = () => {
   const handleDateConfirm = async () => {
     setAvailabilityError('');
     try {
-      const response = await axios.post('http://localhost:5000/api/check-room-availability', {
+      const response = await API.post('/check-room-availability', {
         roomName: pendingRoom.name,
         restaurantName,
         bookingDate,
@@ -103,10 +104,10 @@ const Rooms = () => {
 
     try {
       // 1. Store in database (RoomBooking.js schema handles it)
-      await axios.post('http://localhost:5000/api/book-room', bookingDetails);
+      await API.post('/book-room', bookingDetails);
 
       // 2. Send email confirmation
-      await axios.post('http://localhost:5000/api/send-room-booking-email', bookingDetails);
+      await API.post('/send-room-booking-email', bookingDetails);
 
       setBookingSuccess(true);
       setTimeout(() => navigate('/restaurant'), 2000);

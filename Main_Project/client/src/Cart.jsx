@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Cart.css";
+import API from "./api";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -84,7 +85,7 @@ const Cart = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/orders", {
+      const response = await fetch("/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -124,7 +125,7 @@ const Cart = () => {
         orderDate: selectedDate.toISOString(),
       };
 
-      const response = await fetch("http://localhost:5000/api/send-food-order-email", {
+      const response = await fetch(" /send-food-order-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(emailData),

@@ -517,6 +517,23 @@ app.post("/api/send-food-order-email", async (req, res) => {
 });
 
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Add these two lines at the top of index.js
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// after all your API routes, add this:
+import express from "express";
+app.use(express.static(path.join(__dirname, "client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
+});
+
+
+
 
 
 const PORT = process.env.PORT || 5000;

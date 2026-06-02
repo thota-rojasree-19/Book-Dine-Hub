@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaEnvelope, FaLock, FaKey, FaEye, FaEyeSlash } from 'react-icons/fa';
+import API from "./api";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -66,7 +67,7 @@ const Register = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/register", {
+            const response = await fetch("/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

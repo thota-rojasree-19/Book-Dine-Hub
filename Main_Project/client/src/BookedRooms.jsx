@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './BookedRooms.css';
+import API from "./api";
 
 const BookedRooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -11,7 +12,7 @@ const BookedRooms = () => {
         const fetchRooms = async () => {
             console.log("Fetching rooms for:", userEmail); // Log the email
             try {
-                const response = await axios.get(`http://localhost:5000/api/booked-rooms?email=${userEmail}`);
+                const response = await API.get(`/booked-rooms?email=${userEmail}`);
                 console.log("Fetched data:", response.data); // Log the data
                 setRooms(response.data || []);
             } catch (error) {
@@ -25,7 +26,7 @@ const BookedRooms = () => {
     
     const cancelRoomBooking = async (bookingId) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/cancel-room/${bookingId}`);
+            const response = await API.delete(`/cancel-room/${bookingId}`);
 
             if (response.data.success) {
                 setRooms(rooms.filter(room => room._id !== bookingId));

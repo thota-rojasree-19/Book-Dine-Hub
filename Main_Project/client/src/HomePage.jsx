@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
+import API from "./api";
 
 const teamMembers = [
     { img: '/manager.jpeg', name: 'John Doe', role: 'Manager' },

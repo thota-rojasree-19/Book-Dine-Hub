@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import './TableFoodNav.css';
+import API from "./api";
 
 const TableFoodNav = () => {
     const navigate = useNavigate();

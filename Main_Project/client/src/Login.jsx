@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
+import API from "./api";
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -33,7 +34,7 @@ const Login = () => {
         // --- End admin bypass logic ---
 
         try {
-            const response = await fetch("http://localhost:5000/login", {
+            const response = await fetch("/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

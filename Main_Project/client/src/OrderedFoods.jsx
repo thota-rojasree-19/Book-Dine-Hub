@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './OrderedFoods.css';
+import API from "./api";
 
 const OrderedFoods = () => {
     const [orders, setOrders] = useState([]);
@@ -18,7 +19,7 @@ const OrderedFoods = () => {
 
             try {
                 console.log("Fetching orders for:", userEmail);
-                const response = await axios.get(`http://localhost:5000/api/orders?email=${userEmail}`);
+                const response = await API.get(`/orders?email=${userEmail}`);
                 console.log("Fetched orders data:", response.data);
 
                 if (Array.isArray(response.data)) {
@@ -37,7 +38,7 @@ const OrderedFoods = () => {
 
     const cancelOrder = async (orderId) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/api/cancel-order/${orderId}`);
+            const response = await API.delete(`/cancel-order/${orderId}`);
 
             if (response.data.success) {
                 setOrders(orders.filter(order => order._id !== orderId));

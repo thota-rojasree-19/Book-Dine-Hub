@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileDropdown from './ProfileDropdown'; // Import ProfileDropdown
 import './RestaurantsPage.css';
+import API from "./api";
 
 const restaurantsData = [
     { name: 'Dwaraka', city: 'Kadapa', image: 'rest1.jpeg' },
